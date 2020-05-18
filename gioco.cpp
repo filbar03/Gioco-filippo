@@ -157,10 +157,8 @@ void Istruzioni (void)
 void EasyMode()
 {
     //Dichiaro Variabili
-    int cont_easy; //Contatore usato nella mod. easy.
-    int cont_easy2; //Secondo Contatore usato nella mod. easy.
-    int n_scelti[1]; // numeri scelti dall'utente nella mod. easy.
-    int n_estratti[9]; //Numeri estratti nella mod. easy.
+    int n_scelti[2]; // numeri scelti dall'utente nella mod. easy.
+    int n_estratti[10]; //Numeri estratti nella mod. easy.
     int ni_easy=0; // Contatore numeri indovinati nella mod. easy.
 
     // system("cls");
@@ -174,7 +172,7 @@ void EasyMode()
     cout<<"Numeri da indovinare: 1\n";
 
     //Genero i numeri da indovinare
-    for(cont_easy=0; cont_easy<10; cont_easy++)
+    for(int cont_easy=0; cont_easy<10; cont_easy++)
     {
         n_estratti[cont_easy]=rand()%20+1;
         //cout<<"%d\n",n_estratti[cont_easy]); //riga usata per testare il gioco.
@@ -188,7 +186,7 @@ void EasyMode()
 
     // Fase input.
     cout<<"\nInserisci 2 numeri:\n";
-    for(cont_easy=0; cont_easy<2; cont_easy++)
+    for(int cont_easy=0; cont_easy<2; cont_easy++)
     {
         cout<<"Numero ("<<cont_easy+1<<" di 2 ): ";
         cin>>n_scelti[cont_easy];
@@ -197,16 +195,30 @@ void EasyMode()
 
 
     //Conrtollo se i numeri inseriti corrispondono a quelli estratti.
-    for(cont_easy=0; cont_easy<10; cont_easy++)
+
+    for(int cont_easy=0; cont_easy<2; cont_easy++)
     {
-        for(cont_easy2=0; cont_easy2<2; cont_easy2++)
+        for(int cont_easy2=0; cont_easy2<10; cont_easy2++)
         {
-            if(n_scelti[cont_easy2]==n_estratti[cont_easy])
+            if(n_scelti[cont_easy]==n_estratti[cont_easy2])
             {
                 ni_easy=ni_easy+1;
+                break;
             }
         }
     }
+
+    // for(cont_easy=0; cont_easy<10; cont_easy++)
+    // {
+    //     for(cont_easy2=0; cont_easy2<2; cont_easy2++)
+    //     {
+    //         if(n_scelti[cont_easy2]==n_estratti[cont_easy])
+    //         {
+    //             ni_easy=ni_easy+1;
+    //             break;
+    //         }
+    //     }
+    // }
     cout<<"\n\nIndovinati: "<<ni_easy<<endl; //riga usata per testare il gioco.
     if(ni_easy>=1)
     {
@@ -240,10 +252,8 @@ void EasyMode()
 void HardMode ()
 {
     //Dichiaro Variabili
-    int cont_hard; //Contatore usato nella mod. hard.
-    int cont_hard2; //Secondo Contatore usato nella mod. hard.
-    int n_scelti_h[2]; // numeri scelti dall'utente nella mod. hard.
-    int n_estratti_h[24]; //Numeri estratti nella mod. hard.
+    int n_scelti_h[3]; // numeri scelti dall'utente nella mod. hard.
+    int n_estratti_h[25]; //Numeri estratti nella mod. hard.
     int ni_hard=0; // Contatore numeri indovinati nella mod. hard.
 
     // system("cls");
@@ -257,7 +267,7 @@ void HardMode ()
     cout<<"Numeri da indovinare: 2\n";
 
     //Genero i numeri da indovinare
-    for(cont_hard=0; cont_hard<25; cont_hard++)
+    for(int cont_hard=0; cont_hard<25; cont_hard++)
     {
         n_estratti_h[cont_hard]=rand()%50+1;
         //cout<<"%d\n",n_estratti_h[cont_hard]); //riga usata per testare il gioco.
@@ -265,7 +275,7 @@ void HardMode ()
 
     // Fase input.
     cout<<"\nInserisci 3 numeri:\n";
-    for(cont_hard=0; cont_hard<3; cont_hard++)
+    for(int cont_hard=0; cont_hard<3; cont_hard++)
     {
         cout<<"Numero ("<<cont_hard+1<<" di 3 ): ";
         cin>>n_scelti_h[cont_hard];
@@ -273,16 +283,19 @@ void HardMode ()
     }
 
     //Conrtollo se i numeri inseriti corrispondono a quelli estratti.
-    for(cont_hard=0; cont_hard<10; cont_hard++)
+    for(int cont_hard=0; cont_hard<3; cont_hard++)
     {
-        for(cont_hard2=0; cont_hard2<2; cont_hard2++)
+        for(int cont_hard2=0; cont_hard2<25; cont_hard2++)
         {
-            if(n_scelti_h[cont_hard2]==n_estratti_h[cont_hard])
+            if(n_scelti_h[cont_hard]==n_estratti_h[cont_hard2])
             {
                 ni_hard=ni_hard+1;
+                break;
             }
         }
     }
+
+
     cout<<"\n\nIndovinati: "<<ni_hard<<endl; //riga usata per testare il gioco.
     if(ni_hard>=1)
     {

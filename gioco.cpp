@@ -179,6 +179,12 @@ void EasyMode()
         n_estratti[cont_easy]=rand()%20+1;
         //cout<<"%d\n",n_estratti[cont_easy]); //riga usata per testare il gioco.
     }
+    for (int i =0 ; i < 10; i++)
+    {
+        cout<<n_estratti[i]<<"\t";
+    }
+    cout<<endl;
+
 
     // Fase input.
     cout<<"\nInserisci 2 numeri:\n";
@@ -188,6 +194,7 @@ void EasyMode()
         cin>>n_scelti[cont_easy];
         // scanf("%d",&n_scelti[cont_easy]);
     }
+
 
     //Conrtollo se i numeri inseriti corrispondono a quelli estratti.
     for(cont_easy=0; cont_easy<10; cont_easy++)
@@ -200,7 +207,7 @@ void EasyMode()
             }
         }
     }
-    cout<<"\n\nIndovinati: %d\n",ni_easy; //riga usata per testare il gioco.
+    cout<<"\n\nIndovinati: "<<ni_easy<<endl; //riga usata per testare il gioco.
     if(ni_easy>=1)
     {
         // system("cls");
